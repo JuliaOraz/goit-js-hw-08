@@ -10,7 +10,7 @@ const VIDEOTIME_KEY = "videoplayer-current-time";
 player.on('timeupdate', throttle(setVideoPlayerTime,1000));
 
 function setVideoPlayerTime (currentTime) {
-    localStorage.setItem(VIDEOTIME_KEY, JSON.stringify(currentTime));
+    localStorage.setItem(VIDEOTIME_KEY, JSON.stringify(currentTime.seconds));
 }
 
 // Возобновляем воспроизведение с сохраненной позиции
@@ -18,7 +18,7 @@ const getTime = localStorage.getItem(VIDEOTIME_KEY);
 
 if (getTime) { 
     try {
-        const timeVideo = JSON.parse(getTime).seconds;       
+        const timeVideo = JSON.parse(getTime);       
         player.setCurrentTime(timeVideo);
         } catch (error) {
             console.log("Ошибка"); 
