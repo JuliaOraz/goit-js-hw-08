@@ -17,6 +17,7 @@ function onSubmitFeedback(e) {
     localStorage.removeItem(STORAGE_KEY);
     console.log(`email: ${emailFeedback.value}\nmessage : ${messageFeedback.value}`)
     e.currentTarget.reset()
+    valueStorageFeedback = {};
 }
  
 
