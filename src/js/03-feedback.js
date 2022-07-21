@@ -15,7 +15,7 @@ getDataForm()
 function onSubmitFeedback(e) {
     e.preventDefault();
     localStorage.removeItem(STORAGE_KEY);
-    console.log(`email: ${emailFeedback.value}\nmessage : ${messageFeedback.value}`)
+    console.log(valueStorageFeedback)
     e.currentTarget.reset()
     valueStorageFeedback = {};
 }
